@@ -1,0 +1,55 @@
+.slider {
+    position: relative;
+    width: 60%;
+    height: 90vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide {
+    position: relative;
+    min-width: 100%;
+    height: 80%;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.txt {
+    position: absolute;
+    bottom: 1.5em;
+}
+
+.btnText {
+    color: white;
+}
+
+%btn-styles {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10%;
+    height: 80%;
+    background: none;
+    border: none;
+    outline: none;
+    transition: .2s;
+    font-size: xx-large;
+    background: rgba(0, 0, 0, 0.1);
+    &:hover {
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
+
+#left {
+    left: 0;
+    @extend %btn-styles;
+}
+
+#right {
+    right: 0;
+    @extend %btn-styles;
+}
