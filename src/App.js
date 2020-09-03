@@ -24,15 +24,6 @@ const styles = {
   }
 };
 
-const properties = {
-  duration: 5000,
-  transitionDuration: 500,
-  infinite: true,
-  indicators: true,
-  arrows: true,
-  pauseOnHover: true,
-}
-
 const options = {
   type:  [
     {value: 'artists', label: 'Artists'},
@@ -87,7 +78,7 @@ class App extends Component {
     return hashParams;
   }
 
-  async componentDidMount() {   //data for all six type and time combinations are loaded into state
+  async componentDidMount() {   //data for all six type and time combinations are saved to state
     await spotifyWebAPI.getMyTopArtists({"time_range": "short_term"})
       .then((response) => {
         this.setState({artistsSTImages: [], artistsSTNames: []});
@@ -157,25 +148,25 @@ class App extends Component {
   }
 
   loadChange() {    //checks the selected type amd time and updates the selected images and names
-    if (this.state.typeOption == 'artists') {
-      if (this.state.timeOption == 'ST') {
+    if (this.state.typeOption === 'artists') {
+      if (this.state.timeOption === 'ST') {
         this.setState({selectedImages: this.state.artistsSTImages, selectedNames: this.state.artistsSTNames});
       }
-      if (this.state.timeOption == 'MT') {
+      if (this.state.timeOption === 'MT') {
         this.setState({selectedImages: this.state.artistsMTImages, selectedNames: this.state.artistsMTNames});
       }
-      if (this.state.timeOption == 'LT') {
+      if (this.state.timeOption === 'LT') {
         this.setState({selectedImages: this.state.artistsLTImages, selectedNames: this.state.artistsLTNames});
       }
     }
     else {
-      if (this.state.timeOption == 'ST') {
+      if (this.state.timeOption === 'ST') {
         this.setState({selectedImages: this.state.tracksSTImages, selectedNames: this.state.tracksSTNames});
       }
-      if (this.state.timeOption == 'MT') {
+      if (this.state.timeOption === 'MT') {
         this.setState({selectedImages: this.state.tracksMTImages, selectedNames: this.state.tracksMTNames});
       }
-      if (this.state.timeOption == 'LT') {
+      if (this.state.timeOption === 'LT') {
         this.setState({selectedImages: this.state.tracksLTImages, selectedNames: this.state.tracksLTNames});
       }
     }
