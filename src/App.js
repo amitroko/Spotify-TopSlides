@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SpotifyWebApi from 'spotify-web-api-js';
-import ShowSelect from './ShowSelect';
-import Slider from './Slider';
+import ShowSelect from './ShowSelect.js';
+import Slider from './Slider.js';
 import './App.css';
 
 

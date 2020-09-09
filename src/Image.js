@@ -2,8 +2,6 @@ import React from 'react';
 
 let imageStyles = {
     width: "100%",
-    //height: "90vh",
-    //overflow: "hidden"
     position: "absolute",
     top: "-9999px",
     bottom: "-9999px",
